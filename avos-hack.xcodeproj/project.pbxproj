@@ -19,6 +19,10 @@
 		2B60C37018C189D200691913 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B60C35818C189D200691913 /* UIKit.framework */; };
 		2B60C37818C189D200691913 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2B60C37618C189D200691913 /* InfoPlist.strings */; };
 		2B60C37A18C189D200691913 /* avos_hackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B60C37918C189D200691913 /* avos_hackTests.m */; };
+		2B60C38418C1922400691913 /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B60C38318C1922400691913 /* AVOSCloud.framework */; };
+		2B60C38618C194D400691913 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B60C38518C194D400691913 /* SystemConfiguration.framework */; };
+		2B60C38818C194DD00691913 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B60C38718C194DD00691913 /* MobileCoreServices.framework */; };
+		2B60C38A18C194EA00691913 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B60C38918C194EA00691913 /* CoreTelephony.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,10 @@
 		2B60C37518C189D200691913 /* avos-hackTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "avos-hackTests-Info.plist"; sourceTree = "<group>"; };
 		2B60C37718C189D200691913 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2B60C37918C189D200691913 /* avos_hackTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = avos_hackTests.m; sourceTree = "<group>"; };
+		2B60C38318C1922400691913 /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloud.framework; sourceTree = "<group>"; };
+		2B60C38518C194D400691913 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2B60C38718C194DD00691913 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		2B60C38918C194EA00691913 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,9 +63,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B60C38A18C194EA00691913 /* CoreTelephony.framework in Frameworks */,
+				2B60C38818C194DD00691913 /* MobileCoreServices.framework in Frameworks */,
+				2B60C38618C194D400691913 /* SystemConfiguration.framework in Frameworks */,
 				2B60C35718C189D200691913 /* CoreGraphics.framework in Frameworks */,
 				2B60C35918C189D200691913 /* UIKit.framework in Frameworks */,
 				2B60C35518C189D200691913 /* Foundation.framework in Frameworks */,
+				2B60C38418C1922400691913 /* AVOSCloud.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +108,10 @@
 		2B60C35318C189D200691913 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2B60C38918C194EA00691913 /* CoreTelephony.framework */,
+				2B60C38718C194DD00691913 /* MobileCoreServices.framework */,
+				2B60C38518C194D400691913 /* SystemConfiguration.framework */,
+				2B60C38318C1922400691913 /* AVOSCloud.framework */,
 				2B60C35418C189D200691913 /* Foundation.framework */,
 				2B60C35618C189D200691913 /* CoreGraphics.framework */,
 				2B60C35818C189D200691913 /* UIKit.framework */,
@@ -359,6 +375,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/tao/avos-hack",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "avos-hack/avos-hack-Prefix.pch";
 				INFOPLIST_FILE = "avos-hack/avos-hack-Info.plist";
@@ -372,6 +392,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/tao/avos-hack",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "avos-hack/avos-hack-Prefix.pch";
 				INFOPLIST_FILE = "avos-hack/avos-hack-Info.plist";
