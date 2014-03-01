@@ -230,11 +230,13 @@
 }
 - (IBAction)orderClicked:(id)sender {
 
-    //UIViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"OrderViewController"];
-    //[self.navigationController pushViewController:vc animated:YES];
+    UIViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"OrderViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 - (IBAction)kmpClicked:(id)sender {
     [[NSNotificationCenter defaultCenter] postNotificationName:NeedNearUsersArrNotif object:nil];
+    UIViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"NearUsersViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

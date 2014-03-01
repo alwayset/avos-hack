@@ -44,4 +44,15 @@ static HackDataManager *singletonInstance;
         }
     }];
 }
+
+- (void)sendStatuAtPlace:(AVObject*) place
+{
+    AVStatus *status=[[AVStatus alloc] init];
+    
+    status.data=@{@"event":place[@"objectId"]};
+    
+    [AVStatus sendStatusToFollowers:status andCallback:^(BOOL succeeded, NSError *error) {
+        
+    }];
+}
 @end

@@ -33,32 +33,22 @@
     //[self.navigationController.navigationBar setAlpha:0.5];
     //[self.navigationItem.leftBarButtonItem setImage:[UIImage imageNamed:@"leftArrow"]];
     //[self.navigationItem.backBarButtonItem setImage:[UIImage imageNamed:@"leftArrow"]];
-    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-    [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-    [backButton setImage:[UIImage imageNamed:@"leftArrow.png"] forState:UIControlStateNormal];
-    UIBarButtonItem *backBarButton = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-    self.navigationItem.leftBarButtonItem = backBarButton;
-    
-    self.navigationController.title = @"附近的人";
-    [[NSNotificationCenter defaultCenter] addObserver:self.collectionView selector:@selector(reloadData) name:NearUsersArrLoaded object:nil];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadCV) name:NearUsersArrLoaded object:nil];
     //self.navigationItem
 }
-- (void)back
+- (void)reloadCV
 {
+    [self.collectionView reloadData];
+}
+- (IBAction)back:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = NO;
-    //[self.navigationController.navigationBar setAlpha:0.5];
-    [self.navigationItem.backBarButtonItem setImage:[UIImage imageNamed:@"leftArrow"]];
-    [self.navigationController.navigationBar setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.5]];
-    //[self.navigationController.navigationBar setTranslucent:YES];
-    [self.navigationController.navigationBar setAlpha:0.7];
-    UIView* beautifulView = [[UIView alloc] initWithFrame:CGRectMake(0, 42, 320, 2)];
-    [beautifulView setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.9]];
-    [self.navigationController.navigationBar addSubview:beautifulView];
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)didReceiveMemoryWarning
