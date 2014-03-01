@@ -49,10 +49,18 @@ static HackDataManager *singletonInstance;
 {
     AVStatus *status=[[AVStatus alloc] init];
     
-    status.data=@{@"event":place[@"objectId"]};
+    status.data=@{@"place":place};
     
     [AVStatus sendStatusToFollowers:status andCallback:^(BOOL succeeded, NSError *error) {
-        
+        if (succeeded) {
+            [HackDataManager showMessageWithText:[NSString stringWithFormat:@"成功在%@签到！",place[@"placeName"]]];
+        }
     }];
+}
+- (void)checkInPlace:(AVObject *)place
+{
+    //写place的user Relation
+    [self sendStatuAtPlace:place];
+    
 }
 @end

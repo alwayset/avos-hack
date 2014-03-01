@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AVOSCloud/AVOSCloud.h>
 @interface HackDataManager : NSObject
 @property (nonatomic,retain) NSMutableArray* nearUsers;
 
@@ -16,4 +17,5 @@
 
 + (void)showAlertWithText:(NSString *)text;
 + (void)showMessageWithText:(NSString *)text;
+- (void)checkInPlace:(AVObject*)place;
 @end

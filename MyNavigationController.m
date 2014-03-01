@@ -7,10 +7,10 @@
 //
 
 #import "MyNavigationController.h"
-
+#import <AVOSCloud/AVOSCloud.h>
 #import "HackDataManager.h"
 @interface MyNavigationController ()
-
+@property (nonatomic,retain) NSMutableArray* gotBeacons;
 
 @end
 
@@ -19,8 +19,9 @@
     CLLocationManager *_locationManager;
     NSMutableArray *_rangedRegions;
     NSUUID *_uuid;
-}
 
+}
+@synthesize gotBeacons;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -63,7 +64,23 @@
     [_beacons removeObjectsInArray:near_arr];
 
     if (_beacons.count > 0) {
-        [HackDataManager showMessageWithText:@"成功啦！"];
+        //[HackDataManager showMessageWithText:@"成功啦！"];
+        CLBeacon* beacon = [_beacons objectAtIndex:0];
+        if (!gotBeacons || ![gotBeacons containsObject:beacon.major]) {
+            if (!gotBeacons) gotBeacons = [[NSMutableArray alloc] init];
+            [gotBeacons addObject:beacon.major];
+            AVQuery* query = [AVQuery queryWithClassName:@"Place"];
+            [query whereKey:@"majorValue" equalTo:beacon.major];
+            [query getFirstObjectInBackgroundWithBlock:^(AVObject *object, NSError *error) {
+                if (error) {
+                    
+                } else {
+                    [[HackDataManager sharedInstance] checkInPlace:object];
+                }
+            }];
+
+        }
+                //AVObject* place = [object.majo
     }
     
     
