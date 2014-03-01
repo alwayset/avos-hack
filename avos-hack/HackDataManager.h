@@ -10,6 +10,7 @@
 #import <AVOSCloud/AVOSCloud.h>
 @interface HackDataManager : NSObject
 @property (nonatomic,retain) NSMutableArray* nearUsers;
+@property (nonatomic,retain) NSMutableArray* status;
 
 - (void)loadNearUsersArr;
 + (HackDataManager *)sharedInstance;
@@ -18,4 +19,6 @@
 + (void)showAlertWithText:(NSString *)text;
 + (void)showMessageWithText:(NSString *)text;
 - (void)checkInPlace:(AVObject*)place;
+- (void)loadStatusArr;
++ (NSString*)getTimeStr:(NSDate*) time ;
 @end

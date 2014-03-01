@@ -265,8 +265,8 @@
     
 }
 - (IBAction)orderClicked:(id)sender {
-
-    UIViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"OrderViewController"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NeedStatusArrNotif object:nil];
+    UIViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"WallViewController"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 - (IBAction)kmpClicked:(id)sender {

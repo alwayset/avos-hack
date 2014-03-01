@@ -23,7 +23,7 @@
 //    self.window.backgroundColor = [UIColor whiteColor];
 //    [self.window makeKeyAndVisible];
     [[NSNotificationCenter defaultCenter] addObserver:[HackDataManager sharedInstance] selector:@selector(loadNearUsersArr) name:NeedNearUsersArrNotif object:nil];
-    
+    [[NSNotificationCenter defaultCenter] addObserver:[HackDataManager sharedInstance] selector:@selector(loadStatusArr) name:NeedStatusArrNotif object:nil];
     return YES;
 }
 
