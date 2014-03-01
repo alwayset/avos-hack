@@ -16,7 +16,7 @@
 @end
 
 @implementation NearUsersViewController
-
+@synthesize blurView;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -35,7 +35,7 @@
     //[self.navigationItem.backBarButtonItem setImage:[UIImage imageNamed:@"leftArrow"]];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadCV) name:NearUsersArrLoaded object:nil];
-    //self.navigationItem
+    [blurView setBlurTintColor:[UIColor colorWithWhite:0 alpha:0.2]];
 }
 - (void)reloadCV
 {

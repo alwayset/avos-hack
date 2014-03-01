@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "AMBlurView.h"
 @interface NearUsersViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate>
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
-
+@property (strong, nonatomic) IBOutlet AMBlurView *blurView;
 @end
