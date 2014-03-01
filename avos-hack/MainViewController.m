@@ -206,6 +206,7 @@
         } else {
             if (objects.count == 0) {
                 [user setObject:name forKey:@"displayName"];
+                [user setObject:[self randomMinorValue] forKey:@"minorValue"];
                 NSData* imageData = UIImageJPEGRepresentation(image,1);
                 AVFile* profilePic = [AVFile fileWithName:[NSString stringWithFormat:@"%@.jpg",name] data:imageData];
                 [profilePic saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -235,6 +236,12 @@
         }
     }];
 }
+
+- (NSNumber *)randomMinorValue {
+    int value =  rand() % (9983 - 1) + 1; //create the random number.
+    return [NSNumber numberWithInt:value];
+}
+
 -(NSString *) genRandStringLength {
     
     NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";

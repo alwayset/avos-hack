@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MyNavigationController.m"
-            timestampString = "415372296.067485"
+            filePath = "avos-hack/CheckInPopView.m"
+            timestampString = "415391708.691705"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "-locationManager:didRangeBeacons:inRegion:"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "-setContent"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MyNavigationController.m"
-            timestampString = "415371941.009073"
+            filePath = "avos-hack/CheckInPopView.m"
+            timestampString = "415391708.691705"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "-locationManager:didRangeBeacons:inRegion:"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "-setContent"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

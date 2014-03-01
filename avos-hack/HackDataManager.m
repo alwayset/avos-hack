@@ -9,6 +9,8 @@
 #import "HackDataManager.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "constant.h"
+#import <CoreBluetooth/CoreBluetooth.h>
+
 @implementation HackDataManager
 static HackDataManager *singletonInstance;
 
@@ -16,6 +18,7 @@ static HackDataManager *singletonInstance;
 + (void)initialize {
     if (singletonInstance == nil) {
         singletonInstance = [[HackDataManager alloc] init];
+        singletonInstance.peripheralManager = [[CBPeripheralManager alloc] init];
     }
     
 }
@@ -53,7 +56,7 @@ static HackDataManager *singletonInstance;
     
     [AVStatus sendStatusToFollowers:status andCallback:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-            [HackDataManager showMessageWithText:[NSString stringWithFormat:@"成功在%@签到！",place[@"placeName"]]];
+//            [HackDataManager showMessageWithText:[NSString stringWithFormat:@"成功在%@签到！",place[@"placeName"]]];
         }
     }];
 }
@@ -63,4 +66,17 @@ static HackDataManager *singletonInstance;
     [self sendStatuAtPlace:place];
     
 }
+
+- (void)advertiseUserAtPlace:(AVObject *)place {
+    NSNumber *majorValue = place[@"majorValue"];
+    NSNumber *minorValue = [AVUser currentUser][@"minorValue"];
+    CLBeaconRegion *userBeaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"5A4BCFCE-174E-4BAC-A814-092E77F6B7E5"] major:majorValue.integerValue minor:minorValue.integerValue identifier:@"users"];
+    NSDictionary *peripheralData = [userBeaconRegion peripheralDataWithMeasuredPower:@-59];
+    [self.peripheralManager startAdvertising:peripheralData];
+}
+
+- (void)stopAdvertise {
+    [self.peripheralManager stopAdvertising];
+}
+
 @end

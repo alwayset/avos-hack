@@ -24,6 +24,7 @@
 		2B60C38A18C194EA00691913 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B60C38918C194EA00691913 /* CoreTelephony.framework */; };
 		2B60C3D018C1989700691913 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B60C3CF18C1989700691913 /* Storyboard.storyboard */; };
 		2B60C3E718C20AFA00691913 /* MyNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B60C3E618C20AFA00691913 /* MyNavigationController.m */; };
+		2BD97AF918C2315D00B56924 /* CheckInPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD97AF818C2315D00B56924 /* CheckInPopView.m */; };
 		8467F91018C22CF500CA210E /* AMBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8467F90F18C22CF500CA210E /* AMBlurView.m */; };
 		8483940E18C1993A00672C8A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483940D18C1993900672C8A /* MainViewController.m */; };
 		8483941118C1A1EC00672C8A /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483941018C1A1EC00672C8A /* AVOSCloud.framework */; };
@@ -77,6 +78,8 @@
 		2B60C3CF18C1989700691913 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		2B60C3E518C20AFA00691913 /* MyNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavigationController.h; sourceTree = "<group>"; };
 		2B60C3E618C20AFA00691913 /* MyNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavigationController.m; sourceTree = "<group>"; };
+		2BD97AF718C2315D00B56924 /* CheckInPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckInPopView.h; path = "avos-hack/CheckInPopView.h"; sourceTree = "<group>"; };
+		2BD97AF818C2315D00B56924 /* CheckInPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckInPopView.m; path = "avos-hack/CheckInPopView.m"; sourceTree = "<group>"; };
 		8467F90E18C22CF500CA210E /* AMBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMBlurView.h; sourceTree = "<group>"; };
 		8467F90F18C22CF500CA210E /* AMBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMBlurView.m; sourceTree = "<group>"; };
 		8483940C18C1993900672C8A /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -141,6 +144,8 @@
 			children = (
 				2B60C3E518C20AFA00691913 /* MyNavigationController.h */,
 				2B60C3E618C20AFA00691913 /* MyNavigationController.m */,
+				2BD97AF718C2315D00B56924 /* CheckInPopView.h */,
+				2BD97AF818C2315D00B56924 /* CheckInPopView.m */,
 				2B60C35A18C189D200691913 /* avos-hack */,
 				2B60C37318C189D200691913 /* avos-hackTests */,
 				2B60C35318C189D200691913 /* Frameworks */,
@@ -387,6 +392,7 @@
 				8483943318C1EA2A00672C8A /* OrderViewController.m in Sources */,
 				8483941818C1A85B00672C8A /* MBProgressHUD.m in Sources */,
 				8483940E18C1993A00672C8A /* MainViewController.m in Sources */,
+				2BD97AF918C2315D00B56924 /* CheckInPopView.m in Sources */,
 				8483943D18C2131F00672C8A /* WallViewController.m in Sources */,
 				8483943A18C1FB9900672C8A /* CardCell.m in Sources */,
 				2B60C3E718C20AFA00691913 /* MyNavigationController.m in Sources */,

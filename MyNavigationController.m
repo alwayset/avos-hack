@@ -9,8 +9,12 @@
 #import "MyNavigationController.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "HackDataManager.h"
+#import "CheckInPopView.h"
 @interface MyNavigationController ()
 @property (nonatomic,retain) NSMutableArray* gotBeacons;
+
+
+@property CheckInPopView *checkinView;
 
 @end
 
@@ -19,9 +23,11 @@
     CLLocationManager *_locationManager;
     NSMutableArray *_rangedRegions;
     NSUUID *_uuid;
+    AVObject *_place;
 
 }
 @synthesize gotBeacons;
+@synthesize checkinView;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -71,20 +77,38 @@
             [gotBeacons addObject:beacon.major];
             AVQuery* query = [AVQuery queryWithClassName:@"Place"];
             [query whereKey:@"majorValue" equalTo:beacon.major];
+            [query includeKey:@"ad"];
             [query getFirstObjectInBackgroundWithBlock:^(AVObject *object, NSError *error) {
                 if (error) {
                     
                 } else {
+                    _place = object;
+                    [self popAd];
                     [[HackDataManager sharedInstance] checkInPlace:object];
+                    [[HackDataManager sharedInstance] advertiseUserAtPlace:_place];
                 }
             }];
-
         }
-                //AVObject* place = [object.majo
     }
-    
-    
-    
+}
+
+- (void)hideCheckinView {
+    [checkinView removeFromSuperview];
+}
+
+- (void)popAd {
+    checkinView = [[CheckInPopView alloc] initWithFrame:CGRectMake(30, 80, 260, 400)];
+    checkinView.userInteractionEnabled = YES;
+    [checkinView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideCheckinView)]];
+    checkinView.place = _place;
+    [checkinView setContent];
+    checkinView.layer.cornerRadius = 8.0;
+    checkinView.layer.masksToBounds = YES;
+    checkinView.alpha = 0;
+    [self.view addSubview:checkinView];
+    [UIView animateWithDuration:0.6 animations:^{
+        checkinView.alpha = 1;
+    }];
     
 }
 
