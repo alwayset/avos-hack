@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WallViewController : UIViewController
+@interface WallViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end

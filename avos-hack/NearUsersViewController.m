@@ -75,4 +75,19 @@
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    AVUser* user = [[HackDataManager sharedInstance].nearUsers objectAtIndex:indexPath.row];
+    [[AVUser currentUser] follow:user.objectId andCallback:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            [HackDataManager showMessageWithText:@"关注成功"];
+        } else {
+            if (error.code==kAVErrorDuplicateValue) {
+                //重复关注
+            }
+        }
+        
+    }];
+}
+
 @end

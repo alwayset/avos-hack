@@ -26,6 +26,8 @@
 		2B60C3E718C20AFA00691913 /* MyNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B60C3E618C20AFA00691913 /* MyNavigationController.m */; };
 		2BD97AF918C2315D00B56924 /* CheckInPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD97AF818C2315D00B56924 /* CheckInPopView.m */; };
 		8467F91018C22CF500CA210E /* AMBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8467F90F18C22CF500CA210E /* AMBlurView.m */; };
+		8467F91218C2308E00CA210E /* point.png in Resources */ = {isa = PBXBuildFile; fileRef = 8467F91118C2308E00CA210E /* point.png */; };
+		8467F91518C2315D00CA210E /* StatuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8467F91418C2315D00CA210E /* StatuCell.m */; };
 		8483940E18C1993A00672C8A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483940D18C1993900672C8A /* MainViewController.m */; };
 		8483941118C1A1EC00672C8A /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483941018C1A1EC00672C8A /* AVOSCloud.framework */; };
 		8483941518C1A42200672C8A /* HackDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483941418C1A42200672C8A /* HackDataManager.m */; };
@@ -82,6 +84,9 @@
 		2BD97AF818C2315D00B56924 /* CheckInPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckInPopView.m; path = "avos-hack/CheckInPopView.m"; sourceTree = "<group>"; };
 		8467F90E18C22CF500CA210E /* AMBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMBlurView.h; sourceTree = "<group>"; };
 		8467F90F18C22CF500CA210E /* AMBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMBlurView.m; sourceTree = "<group>"; };
+		8467F91118C2308E00CA210E /* point.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = point.png; path = images/point.png; sourceTree = "<group>"; };
+		8467F91318C2315D00CA210E /* StatuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatuCell.h; sourceTree = "<group>"; };
+		8467F91418C2315D00CA210E /* StatuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatuCell.m; sourceTree = "<group>"; };
 		8483940C18C1993900672C8A /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		8483940D18C1993900672C8A /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		8483941018C1A1EC00672C8A /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloud.framework; sourceTree = "<group>"; };
@@ -180,7 +185,6 @@
 		2B60C35A18C189D200691913 /* avos-hack */ = {
 			isa = PBXGroup;
 			children = (
-				8467F90D18C22CF500CA210E /* AMBlurView */,
 				2B60C36318C189D200691913 /* AppDelegate.h */,
 				2B60C36418C189D200691913 /* AppDelegate.m */,
 				2B60C36618C189D200691913 /* Images.xcassets */,
@@ -201,7 +205,10 @@
 				8483942618C1CE3600672C8A /* CircleButton.m */,
 				8483943818C1FB9900672C8A /* CardCell.h */,
 				8483943918C1FB9900672C8A /* CardCell.m */,
+				8467F91318C2315D00CA210E /* StatuCell.h */,
+				8467F91418C2315D00CA210E /* StatuCell.m */,
 				8483941E18C1C66900672C8A /* images */,
+				8467F90D18C22CF500CA210E /* AMBlurView */,
 				8483941D18C1B2BF00672C8A /* MBProgressHUD */,
 				8483941918C1AF6900672C8A /* VPImageCropper */,
 			);
@@ -267,6 +274,7 @@
 		8483941E18C1C66900672C8A /* images */ = {
 			isa = PBXGroup;
 			children = (
+				8467F91118C2308E00CA210E /* point.png */,
 				8483943618C1F2A700672C8A /* leftArrow@2x.png */,
 				8483943418C1F0E800672C8A /* leftArrow.png */,
 				8483942C18C1DD4300672C8A /* nilPic.png */,
@@ -364,6 +372,7 @@
 				8483943718C1F2A700672C8A /* leftArrow@2x.png in Resources */,
 				8483942418C1CD5300672C8A /* displayNameIcon.png in Resources */,
 				2B60C3D018C1989700691913 /* Storyboard.storyboard in Resources */,
+				8467F91218C2308E00CA210E /* point.png in Resources */,
 				8483942B18C1D3FE00672C8A /* drinkIcon.png in Resources */,
 				8483943518C1F0E800672C8A /* leftArrow.png in Resources */,
 			);
@@ -394,6 +403,7 @@
 				8483940E18C1993A00672C8A /* MainViewController.m in Sources */,
 				2BD97AF918C2315D00B56924 /* CheckInPopView.m in Sources */,
 				8483943D18C2131F00672C8A /* WallViewController.m in Sources */,
+				8467F91518C2315D00CA210E /* StatuCell.m in Sources */,
 				8483943A18C1FB9900672C8A /* CardCell.m in Sources */,
 				2B60C3E718C20AFA00691913 /* MyNavigationController.m in Sources */,
 				2B60C36118C189D200691913 /* main.m in Sources */,

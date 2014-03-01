@@ -17,4 +17,6 @@
 #define NeedNearUsersArrNotif @"need_near_users_array_notification"
 #define NearUsersArrLoaded @"near_users_array_loaded"
 
+#define NeedStatusArrNotif @"need_status_array_notification"
+#define StatusArrLoaded @"status_array_loaded"
 #endif
