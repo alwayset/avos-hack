@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="yyQ-h0-u7z">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--My Navigation Controller-->
         <scene sceneID="D1R-Rk-bJp">
             <objects>
-                <navigationController definesPresentationContext="YES" id="yyQ-h0-u7z" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="yyQ-h0-u7z" customClass="MyNavigationController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vp9-u6-mnV">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

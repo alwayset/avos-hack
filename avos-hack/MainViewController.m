@@ -19,7 +19,14 @@
 
 @end
 
-@implementation MainViewController
+@implementation MainViewController {
+    
+    NSMutableDictionary *_beacons;
+    CLLocationManager *_locationManager;
+    NSMutableArray *_rangedRegions;
+    
+    
+}
 @synthesize signUpView;
 @synthesize signupProfilePicView;
 @synthesize displayNameField;
@@ -57,7 +64,36 @@
     }
     [self showButtonsView];
     
+    
+    _beacons = [[NSMutableDictionary alloc] init];
+    
+    // This location manager will be used to demonstrate how to range beacons.
+    _locationManager = [[CLLocationManager alloc] init];
+    _locationManager.delegate = self;
+    
 }
+
+
+
+
+- (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
+{
+    // CoreLocation will call this delegate method at 1 Hz with updated range information.
+    // Beacons will be categorized and displayed by proximity.
+
+    
+    NSArray *immediateBeacons = [beacons filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"proximity = %d", CLProximityNear]];
+    if([immediateBeacons count])
+        [_beacons setObject:immediateBeacons forKey:[NSNumber numberWithInt:CLProximityImmediate]];
+    
+    
+    
+}
+
+- (void)checkIn {
+    
+}
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
