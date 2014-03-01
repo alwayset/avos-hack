@@ -13,14 +13,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
     [AVOSCloud setApplicationId:@"y3uujuewzksew1jkhi685v7u59qimu0z60qb7ooal0cevcq8"
                       clientKey:@"4v0lqg0tfajr3w8mesydna72h2spqx4spwzmsk3unrt9mdxa"];
     
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+//    self.window.backgroundColor = [UIColor whiteColor];
+//    [self.window makeKeyAndVisible];
     return YES;
 }
 
