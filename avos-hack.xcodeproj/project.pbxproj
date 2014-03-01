@@ -34,6 +34,10 @@
 		8483942A18C1D3FE00672C8A /* cardIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8483942818C1D3FE00672C8A /* cardIcon.png */; };
 		8483942B18C1D3FE00672C8A /* drinkIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8483942918C1D3FE00672C8A /* drinkIcon.png */; };
 		8483942D18C1DD4300672C8A /* nilPic.png in Resources */ = {isa = PBXBuildFile; fileRef = 8483942C18C1DD4300672C8A /* nilPic.png */; };
+		8483943018C1E9E600672C8A /* NearUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483942F18C1E9E600672C8A /* NearUsersViewController.m */; };
+		8483943318C1EA2A00672C8A /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483943218C1EA2A00672C8A /* OrderViewController.m */; };
+		8483943518C1F0E800672C8A /* leftArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 8483943418C1F0E800672C8A /* leftArrow.png */; };
+		8483943718C1F2A700672C8A /* leftArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8483943618C1F2A700672C8A /* leftArrow@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +88,12 @@
 		8483942818C1D3FE00672C8A /* cardIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cardIcon.png; path = images/cardIcon.png; sourceTree = "<group>"; };
 		8483942918C1D3FE00672C8A /* drinkIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = drinkIcon.png; path = images/drinkIcon.png; sourceTree = "<group>"; };
 		8483942C18C1DD4300672C8A /* nilPic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nilPic.png; path = images/nilPic.png; sourceTree = "<group>"; };
+		8483942E18C1E9E600672C8A /* NearUsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearUsersViewController.h; sourceTree = "<group>"; };
+		8483942F18C1E9E600672C8A /* NearUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearUsersViewController.m; sourceTree = "<group>"; };
+		8483943118C1EA2A00672C8A /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
+		8483943218C1EA2A00672C8A /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
+		8483943418C1F0E800672C8A /* leftArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = leftArrow.png; path = images/leftArrow.png; sourceTree = "<group>"; };
+		8483943618C1F2A700672C8A /* leftArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "leftArrow@2x.png"; path = "images/leftArrow@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,21 +161,25 @@
 		2B60C35A18C189D200691913 /* avos-hack */ = {
 			isa = PBXGroup;
 			children = (
-				8483941E18C1C66900672C8A /* images */,
 				2B60C36318C189D200691913 /* AppDelegate.h */,
 				2B60C36418C189D200691913 /* AppDelegate.m */,
 				2B60C36618C189D200691913 /* Images.xcassets */,
 				2B60C35B18C189D200691913 /* Supporting Files */,
 				2B60C3CF18C1989700691913 /* Storyboard.storyboard */,
+				8483941218C1A3B300672C8A /* constant.h */,
 				8483940C18C1993900672C8A /* MainViewController.h */,
 				8483940D18C1993900672C8A /* MainViewController.m */,
-				8483941218C1A3B300672C8A /* constant.h */,
+				8483942E18C1E9E600672C8A /* NearUsersViewController.h */,
+				8483942F18C1E9E600672C8A /* NearUsersViewController.m */,
+				8483943118C1EA2A00672C8A /* OrderViewController.h */,
+				8483943218C1EA2A00672C8A /* OrderViewController.m */,
 				8483941318C1A42200672C8A /* HackDataManager.h */,
 				8483941418C1A42200672C8A /* HackDataManager.m */,
-				8483941D18C1B2BF00672C8A /* MBProgressHUD */,
-				8483941918C1AF6900672C8A /* VPImageCropper */,
 				8483942518C1CE3600672C8A /* CircleButton.h */,
 				8483942618C1CE3600672C8A /* CircleButton.m */,
+				8483941E18C1C66900672C8A /* images */,
+				8483941D18C1B2BF00672C8A /* MBProgressHUD */,
+				8483941918C1AF6900672C8A /* VPImageCropper */,
 			);
 			path = "avos-hack";
 			sourceTree = "<group>";
@@ -220,6 +234,8 @@
 		8483941E18C1C66900672C8A /* images */ = {
 			isa = PBXGroup;
 			children = (
+				8483943618C1F2A700672C8A /* leftArrow@2x.png */,
+				8483943418C1F0E800672C8A /* leftArrow.png */,
 				8483942C18C1DD4300672C8A /* nilPic.png */,
 				8483942818C1D3FE00672C8A /* cardIcon.png */,
 				8483942918C1D3FE00672C8A /* drinkIcon.png */,
@@ -312,9 +328,11 @@
 				8483942A18C1D3FE00672C8A /* cardIcon.png in Resources */,
 				2B60C36718C189D200691913 /* Images.xcassets in Resources */,
 				8483942D18C1DD4300672C8A /* nilPic.png in Resources */,
+				8483943718C1F2A700672C8A /* leftArrow@2x.png in Resources */,
 				8483942418C1CD5300672C8A /* displayNameIcon.png in Resources */,
 				2B60C3D018C1989700691913 /* Storyboard.storyboard in Resources */,
 				8483942B18C1D3FE00672C8A /* drinkIcon.png in Resources */,
+				8483943518C1F0E800672C8A /* leftArrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +354,8 @@
 				8483941518C1A42200672C8A /* HackDataManager.m in Sources */,
 				2B60C36518C189D200691913 /* AppDelegate.m in Sources */,
 				8483941C18C1AF6900672C8A /* VPImageCropperViewController.m in Sources */,
+				8483943018C1E9E600672C8A /* NearUsersViewController.m in Sources */,
+				8483943318C1EA2A00672C8A /* OrderViewController.m in Sources */,
 				8483941818C1A85B00672C8A /* MBProgressHUD.m in Sources */,
 				8483940E18C1993A00672C8A /* MainViewController.m in Sources */,
 				2B60C36118C189D200691913 /* main.m in Sources */,

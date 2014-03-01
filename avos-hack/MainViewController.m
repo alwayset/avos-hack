@@ -61,7 +61,8 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)reloadProfile
@@ -227,6 +228,17 @@
     
     
 }
+- (IBAction)orderClicked:(id)sender {
+
+    //UIViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"OrderViewController"];
+    //[self.navigationController pushViewController:vc animated:YES];
+}
+- (IBAction)kmpClicked:(id)sender {
+    //UIViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"NearUsersViewController"];
+    //[self.navigationController pushViewController:vc animated:YES];
+}
+
+
 #pragma mark VPImageCropperDelegate
 - (void)imageCropper:(VPImageCropperViewController *)cropperViewController didFinished:(UIImage *)editedImage {
     signupProfilePicView.image = editedImage;
