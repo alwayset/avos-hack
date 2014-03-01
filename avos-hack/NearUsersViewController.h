@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NearUsersViewController : UIViewController
+@interface NearUsersViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate>
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end

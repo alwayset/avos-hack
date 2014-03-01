@@ -234,8 +234,7 @@
     //[self.navigationController pushViewController:vc animated:YES];
 }
 - (IBAction)kmpClicked:(id)sender {
-    //UIViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"NearUsersViewController"];
-    //[self.navigationController pushViewController:vc animated:YES];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NeedNearUsersArrNotif object:nil];
 }
 
 

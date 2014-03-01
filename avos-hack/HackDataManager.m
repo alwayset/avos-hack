@@ -7,9 +7,11 @@
 //
 
 #import "HackDataManager.h"
-
+#import <AVOSCloud/AVOSCloud.h>
+#import "constant.h"
 @implementation HackDataManager
 static HackDataManager *singletonInstance;
+
 
 + (void)initialize {
     if (singletonInstance == nil) {
@@ -30,5 +32,16 @@ static HackDataManager *singletonInstance;
 + (void)showMessageWithText:(NSString *)text {
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:nil message:text delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
+}
+- (void)loadNearUsersArr
+{
+    AVQuery* query = [AVQuery queryWithClassName:@"_User"];
+    [query includeKey:@"profilePicture"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            self.nearUsers = [NSMutableArray arrayWithArray:objects];
+            [[NSNotificationCenter defaultCenter] postNotificationName:NearUsersArrLoaded object:nil];
+        }
+    }];
 }
 @end

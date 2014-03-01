@@ -38,6 +38,7 @@
 		8483943318C1EA2A00672C8A /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483943218C1EA2A00672C8A /* OrderViewController.m */; };
 		8483943518C1F0E800672C8A /* leftArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 8483943418C1F0E800672C8A /* leftArrow.png */; };
 		8483943718C1F2A700672C8A /* leftArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8483943618C1F2A700672C8A /* leftArrow@2x.png */; };
+		8483943A18C1FB9900672C8A /* CardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483943918C1FB9900672C8A /* CardCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,8 @@
 		8483943218C1EA2A00672C8A /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
 		8483943418C1F0E800672C8A /* leftArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = leftArrow.png; path = images/leftArrow.png; sourceTree = "<group>"; };
 		8483943618C1F2A700672C8A /* leftArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "leftArrow@2x.png"; path = "images/leftArrow@2x.png"; sourceTree = "<group>"; };
+		8483943818C1FB9900672C8A /* CardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardCell.h; sourceTree = "<group>"; };
+		8483943918C1FB9900672C8A /* CardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +180,8 @@
 				8483941418C1A42200672C8A /* HackDataManager.m */,
 				8483942518C1CE3600672C8A /* CircleButton.h */,
 				8483942618C1CE3600672C8A /* CircleButton.m */,
+				8483943818C1FB9900672C8A /* CardCell.h */,
+				8483943918C1FB9900672C8A /* CardCell.m */,
 				8483941E18C1C66900672C8A /* images */,
 				8483941D18C1B2BF00672C8A /* MBProgressHUD */,
 				8483941918C1AF6900672C8A /* VPImageCropper */,
@@ -358,6 +363,7 @@
 				8483943318C1EA2A00672C8A /* OrderViewController.m in Sources */,
 				8483941818C1A85B00672C8A /* MBProgressHUD.m in Sources */,
 				8483940E18C1993A00672C8A /* MainViewController.m in Sources */,
+				8483943A18C1FB9900672C8A /* CardCell.m in Sources */,
 				2B60C36118C189D200691913 /* main.m in Sources */,
 				8483942718C1CE3600672C8A /* CircleButton.m in Sources */,
 			);

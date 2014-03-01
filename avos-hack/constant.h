@@ -14,5 +14,7 @@
 
 #define ORIGINAL_MAX_WIDTH 640.0f
 
+#define NeedNearUsersArrNotif @"need_near_users_array_notification"
+#define NearUsersArrLoaded @"near_users_array_loaded"
 
 #endif

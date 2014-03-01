@@ -8,7 +8,8 @@
 
 #import "AppDelegate.h"
 #import <AVOSCloud/AVOSCloud.h>
-
+#import "constant.h"
+#import "HackDataManager.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -21,6 +22,8 @@
     
 //    self.window.backgroundColor = [UIColor whiteColor];
 //    [self.window makeKeyAndVisible];
+    [[NSNotificationCenter defaultCenter] addObserver:[HackDataManager sharedInstance] selector:@selector(loadNearUsersArr) name:NeedNearUsersArrNotif object:nil];
+    
     return YES;
 }
 

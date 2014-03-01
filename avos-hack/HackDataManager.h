@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-
 @interface HackDataManager : NSObject
+@property (nonatomic,retain) NSMutableArray* nearUsers;
+
+- (void)loadNearUsersArr;
 + (HackDataManager *)sharedInstance;
 + (void)initialize;
 
