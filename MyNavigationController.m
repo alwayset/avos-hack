@@ -53,16 +53,17 @@
     // Beacons will be categorized and displayed by proximity.
     _beacons = [NSMutableArray arrayWithArray:beacons];
     
-    
+        NSArray *near_arr = [beacons filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"proximity = %d", CLProximityNear]];
     NSArray *far_arr = [beacons filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"proximity = %d", CLProximityFar]];
     
     NSArray *unknown_arr = [beacons filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"proximity = %d", CLProximityUnknown]];
     
     [_beacons removeObjectsInArray:far_arr];
     [_beacons removeObjectsInArray:unknown_arr];
+    [_beacons removeObjectsInArray:near_arr];
 
     if (_beacons.count > 0) {
-        
+        [HackDataManager showMessageWithText:@"成功啦！"];
     }
     
     
