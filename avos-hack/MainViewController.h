@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "VPImageCropperViewController.h"
 #import "CircleButton.h"
-@interface MainViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate, VPImageCropperDelegate>
+#import <CoreLocation/CoreLocation.h>
+
+
+@interface MainViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate, VPImageCropperDelegate, CLLocationManagerDelegate>
 @property (strong, nonatomic) IBOutlet UIView *signUpView;
 @property (strong, nonatomic) IBOutlet UIImageView *signupProfilePicView;
 @property (strong, nonatomic) IBOutlet UITextField *displayNameField;
