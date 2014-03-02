@@ -59,7 +59,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ProductCell *cell = [self.tableview dequeueReusableCellWithIdentifier:@"productcell" forIndexPath:indexPath];
+    ProductCell *cell = [self.tableview dequeueReusableCellWithIdentifier:@"ProductCell" forIndexPath:indexPath];
     AVObject *aProduct = [_products objectAtIndex:indexPath.row];
     cell.productName = aProduct[@"productName"];
     AVFile *file = aProduct[@"image"];

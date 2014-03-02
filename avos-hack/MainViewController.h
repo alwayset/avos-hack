@@ -26,5 +26,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *imhereLabel;
 @property (weak, nonatomic) IBOutlet UILabel *placeNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *placePicture;
+@property (strong, nonatomic) IBOutlet UIButton *placeButton;
 
 @end
