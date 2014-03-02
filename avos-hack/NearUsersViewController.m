@@ -25,6 +25,7 @@
 @synthesize companyLabel;
 @synthesize addressLabel;
 @synthesize wechatLabel;
+@synthesize selectedUser;
 //@synthesize blur;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -132,6 +133,23 @@
                          
                      }];
 }
+- (IBAction)followClicked:(id)sender {
+    [[AVUser currentUser] follow:selectedUser.objectId andCallback:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            [HackDataManager showMessageWithText:@"关注成功"];
+        } else {
+            if (error.code==kAVErrorDuplicateValue) {
+                [[AVUser currentUser] unfollow:selectedUser.objectId andCallback:^(BOOL succeeded, NSError *error) {
+                    if (succeeded) {
+                        [HackDataManager showAlertWithText:@"已取消关注"];
+                    }
+                }];
+                
+            }
+        }
+        
+    }];
+}
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -144,6 +162,7 @@
     emailLabel.text = user[@"myEmail"];
     addressLabel.text = user[@"address"];
     wechatLabel.text = user[@"wechat"];
+    selectedUser = user;
     [self showCard];
     
     /*

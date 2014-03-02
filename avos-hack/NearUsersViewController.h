@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AMBlurView.h"
+#import <AVOSCloud/AVOSCloud.h>
 #import "DRNRealTimeBlurView.h"
 @interface NearUsersViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate>
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -21,4 +22,5 @@
 @property (strong, nonatomic) IBOutlet UIButton *followButton;
 //@property (strong, nonatomic) IBOutlet DRNRealTimeBlurView *blur;
 @property (strong, nonatomic) IBOutlet UIView *cardView;
+@property (strong,nonatomic) AVUser* selectedUser;
 @end
