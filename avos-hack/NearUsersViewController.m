@@ -141,11 +141,11 @@
             if (error.code==kAVErrorDuplicateValue) {
                 [[AVUser currentUser] unfollow:selectedUser.objectId andCallback:^(BOOL succeeded, NSError *error) {
                     if (succeeded) {
-                        [HackDataManager showAlertWithText:@"已取消关注"];
+                        [HackDataManager showMessageWithText:@"已取消关注"];
                     }
                 }];
                 
-            }
+            } else [HackDataManager showMessageWithText:error.description];
         }
         
     }];
