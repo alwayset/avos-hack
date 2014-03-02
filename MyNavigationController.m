@@ -112,6 +112,7 @@
         }
     } else {
         [[AVUser currentUser] setObject:[NSNull null] forKey:@"currentPlace"];
+        [[AVUser currentUser] saveInBackground];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"ShouldHideCurrentPlace" object:nil];
     }
 }
