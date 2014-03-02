@@ -9,6 +9,7 @@
 #import "HackDataManager.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "constant.h"
+
 @implementation HackDataManager
 static HackDataManager *singletonInstance;
 
@@ -16,9 +17,17 @@ static HackDataManager *singletonInstance;
 + (void)initialize {
     if (singletonInstance == nil) {
         singletonInstance = [[HackDataManager alloc] init];
+        singletonInstance.peripheralManager =   [[CBPeripheralManager alloc] initWithDelegate:(id)singletonInstance queue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
+        singletonInstance.peripheralManager.delegate = singletonInstance;
     }
     
 }
+
+- (void)peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral
+{
+    
+}
+
 
 + (HackDataManager *)sharedInstance {
     return singletonInstance;
@@ -54,7 +63,7 @@ static HackDataManager *singletonInstance;
     
     [AVStatus sendStatusToFollowers:status andCallback:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-            [HackDataManager showMessageWithText:[NSString stringWithFormat:@"成功在%@签到！",place[@"placeName"]]];
+//            [HackDataManager showMessageWithText:[NSString stringWithFormat:@"成功在%@签到！",place[@"placeName"]]];
         }
     }];
 }
@@ -63,6 +72,32 @@ static HackDataManager *singletonInstance;
     //写place的user Relation
     [self sendStatuAtPlace:place];
     
+}
+
+- (void)addToPlace:(AVObject *)place {
+    AVRelation *relation = [place relationforKey:@"nearbyUsers"];
+    [relation addObject:[AVUser currentUser]];
+    [place saveInBackground];
+}
+
+- (void)removeFromPlace:(AVObject *)place {
+    AVRelation *relation = [place relationforKey:@"nearbyUsers"];
+    [relation removeObject:[AVUser currentUser]];
+    [place saveInBackground];
+}
+
+
+- (void)advertiseUserAtPlace:(AVObject *)place {
+    NSNumber *majorValue = place[@"majorValue"];
+    NSNumber *minorValue = [AVUser currentUser][@"minorValue"];
+//    CLBeaconRegion *userBeaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"5A4BCFCE-174E-4BAC-A814-092E77F6B7E5"] major:majorValue.integerValue minor:minorValue.integerValue identifier:@"users"];
+    CLBeaconRegion *userBeaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"5A4BCFCE-174E-4BAC-A814-092E77F6B7E5"] identifier:@"999"];
+    NSDictionary *peripheralData = [userBeaconRegion peripheralDataWithMeasuredPower:nil];
+    [self.peripheralManager startAdvertising:peripheralData];
+}
+
+- (void)stopAdvertise {
+    [self.peripheralManager stopAdvertising];
 }
 
 - (void)loadStatusArr

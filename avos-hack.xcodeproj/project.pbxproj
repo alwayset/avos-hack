@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B36850818C28DC000EC1FA5 /* PlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B36850718C28DC000EC1FA5 /* PlaceViewController.m */; };
+		2B36850B18C29C4100EC1FA5 /* ProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B36850A18C29C4100EC1FA5 /* ProductCell.m */; };
 		2B60C35518C189D200691913 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B60C35418C189D200691913 /* Foundation.framework */; };
 		2B60C35718C189D200691913 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B60C35618C189D200691913 /* CoreGraphics.framework */; };
 		2B60C35918C189D200691913 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B60C35818C189D200691913 /* UIKit.framework */; };
@@ -24,8 +26,12 @@
 		2B60C38A18C194EA00691913 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B60C38918C194EA00691913 /* CoreTelephony.framework */; };
 		2B60C3D018C1989700691913 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B60C3CF18C1989700691913 /* Storyboard.storyboard */; };
 		2B60C3E718C20AFA00691913 /* MyNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B60C3E618C20AFA00691913 /* MyNavigationController.m */; };
+
 		84084B3118C260B900D421FF /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84084B3018C260B900D421FF /* UserProfileViewController.m */; };
 		84084B3418C260EC00D421FF /* PlaceProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84084B3318C260EC00D421FF /* PlaceProfileViewController.m */; };
+
+		2BD97AF918C2315D00B56924 /* CheckInPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD97AF818C2315D00B56924 /* CheckInPopView.m */; };
+
 		8467F91018C22CF500CA210E /* AMBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8467F90F18C22CF500CA210E /* AMBlurView.m */; };
 		8467F91218C2308E00CA210E /* point.png in Resources */ = {isa = PBXBuildFile; fileRef = 8467F91118C2308E00CA210E /* point.png */; };
 		8467F91518C2315D00CA210E /* StatuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8467F91418C2315D00CA210E /* StatuCell.m */; };
@@ -59,6 +65,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B36850618C28DC000EC1FA5 /* PlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceViewController.h; sourceTree = "<group>"; };
+		2B36850718C28DC000EC1FA5 /* PlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceViewController.m; sourceTree = "<group>"; };
+		2B36850918C29C4100EC1FA5 /* ProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCell.h; sourceTree = "<group>"; };
+		2B36850A18C29C4100EC1FA5 /* ProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCell.m; sourceTree = "<group>"; };
 		2B60C35118C189D200691913 /* avos-hack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "avos-hack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B60C35418C189D200691913 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2B60C35618C189D200691913 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -81,10 +91,15 @@
 		2B60C3CF18C1989700691913 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		2B60C3E518C20AFA00691913 /* MyNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavigationController.h; sourceTree = "<group>"; };
 		2B60C3E618C20AFA00691913 /* MyNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavigationController.m; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		84084B2F18C260B900D421FF /* UserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileViewController.h; sourceTree = "<group>"; };
 		84084B3018C260B900D421FF /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileViewController.m; sourceTree = "<group>"; };
 		84084B3218C260EC00D421FF /* PlaceProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceProfileViewController.h; sourceTree = "<group>"; };
 		84084B3318C260EC00D421FF /* PlaceProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceProfileViewController.m; sourceTree = "<group>"; };
+=======
+		2BD97AF718C2315D00B56924 /* CheckInPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckInPopView.h; path = "avos-hack/CheckInPopView.h"; sourceTree = "<group>"; };
+		2BD97AF818C2315D00B56924 /* CheckInPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckInPopView.m; path = "avos-hack/CheckInPopView.m"; sourceTree = "<group>"; };
+>>>>>>> origin/newnew
 		8467F90E18C22CF500CA210E /* AMBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMBlurView.h; sourceTree = "<group>"; };
 		8467F90F18C22CF500CA210E /* AMBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMBlurView.m; sourceTree = "<group>"; };
 		8467F91118C2308E00CA210E /* point.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = point.png; path = images/point.png; sourceTree = "<group>"; };
@@ -152,6 +167,8 @@
 			children = (
 				2B60C3E518C20AFA00691913 /* MyNavigationController.h */,
 				2B60C3E618C20AFA00691913 /* MyNavigationController.m */,
+				2BD97AF718C2315D00B56924 /* CheckInPopView.h */,
+				2BD97AF818C2315D00B56924 /* CheckInPopView.m */,
 				2B60C35A18C189D200691913 /* avos-hack */,
 				2B60C37318C189D200691913 /* avos-hackTests */,
 				2B60C35318C189D200691913 /* Frameworks */,
@@ -191,6 +208,10 @@
 				2B60C36618C189D200691913 /* Images.xcassets */,
 				2B60C35B18C189D200691913 /* Supporting Files */,
 				2B60C3CF18C1989700691913 /* Storyboard.storyboard */,
+				2B36850618C28DC000EC1FA5 /* PlaceViewController.h */,
+				2B36850718C28DC000EC1FA5 /* PlaceViewController.m */,
+				2B36850918C29C4100EC1FA5 /* ProductCell.h */,
+				2B36850A18C29C4100EC1FA5 /* ProductCell.m */,
 				8483941218C1A3B300672C8A /* constant.h */,
 				8483940C18C1993900672C8A /* MainViewController.h */,
 				8483940D18C1993900672C8A /* MainViewController.m */,
@@ -403,16 +424,19 @@
 				8467F91018C22CF500CA210E /* AMBlurView.m in Sources */,
 				2B60C36518C189D200691913 /* AppDelegate.m in Sources */,
 				8483941C18C1AF6900672C8A /* VPImageCropperViewController.m in Sources */,
+				2B36850818C28DC000EC1FA5 /* PlaceViewController.m in Sources */,
 				8483943018C1E9E600672C8A /* NearUsersViewController.m in Sources */,
 				8483943318C1EA2A00672C8A /* OrderViewController.m in Sources */,
 				8483941818C1A85B00672C8A /* MBProgressHUD.m in Sources */,
 				8483940E18C1993A00672C8A /* MainViewController.m in Sources */,
+				2BD97AF918C2315D00B56924 /* CheckInPopView.m in Sources */,
 				8483943D18C2131F00672C8A /* WallViewController.m in Sources */,
 				8467F91518C2315D00CA210E /* StatuCell.m in Sources */,
 				8483943A18C1FB9900672C8A /* CardCell.m in Sources */,
 				84084B3418C260EC00D421FF /* PlaceProfileViewController.m in Sources */,
 				2B60C3E718C20AFA00691913 /* MyNavigationController.m in Sources */,
 				2B60C36118C189D200691913 /* main.m in Sources */,
+				2B36850B18C29C4100EC1FA5 /* ProductCell.m in Sources */,
 				8483942718C1CE3600672C8A /* CircleButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

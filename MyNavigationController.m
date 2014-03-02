@@ -9,8 +9,12 @@
 #import "MyNavigationController.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "HackDataManager.h"
+#import "CheckInPopView.h"
 @interface MyNavigationController ()
 @property (nonatomic,retain) NSMutableArray* gotBeacons;
+
+
+@property CheckInPopView *checkinView;
 
 @end
 
@@ -19,9 +23,11 @@
     CLLocationManager *_locationManager;
     NSMutableArray *_rangedRegions;
     NSUUID *_uuid;
+    AVObject *_place;
 
 }
 @synthesize gotBeacons;
+@synthesize checkinView;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -34,6 +40,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    
+    
     _uuid = [[NSUUID alloc] initWithUUIDString:@"E2C56DB5-DFFB-48D2-B060-D0F5A71096E0"];
 	// Do any additional setup after loading the view.
     _locationManager = [[CLLocationManager alloc] init];
@@ -71,20 +80,47 @@
             [gotBeacons addObject:beacon.major];
             AVQuery* query = [AVQuery queryWithClassName:@"Place"];
             [query whereKey:@"majorValue" equalTo:beacon.major];
+            [query includeKey:@"ad"];
             [query getFirstObjectInBackgroundWithBlock:^(AVObject *object, NSError *error) {
                 if (error) {
                     
                 } else {
+                    AVUser *currentUser = [AVUser currentUser];
+                    [currentUser setObject:object forKey:@"currentPlace"];
+                    [currentUser saveInBackground];
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"ShouldShowCurrentPlace" object:object];
+                    _place = object;
+                    [self popAd];
                     [[HackDataManager sharedInstance] checkInPlace:object];
+//                    [[HackDataManager sharedInstance] advertiseUserAtPlace:_place];
+                    
                 }
             }];
-
         }
-                //AVObject* place = [object.majo
+    } else {
+        [[AVUser currentUser] setObject:[NSNull null] forKey:@"currentPlace"];
+        _place = nil;
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"ShouldHideCurrentPlace" object:nil];
     }
-    
-    
-    
+}
+
+- (void)hideCheckinView {
+    [checkinView removeFromSuperview];
+}
+
+- (void)popAd {
+    checkinView = [[CheckInPopView alloc] initWithFrame:CGRectMake(30, 80, 260, 400)];
+    checkinView.userInteractionEnabled = YES;
+    [checkinView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideCheckinView)]];
+    checkinView.place = _place;
+    [checkinView setContent];
+    checkinView.layer.cornerRadius = 8.0;
+    checkinView.layer.masksToBounds = YES;
+    checkinView.alpha = 0;
+    [self.view addSubview:checkinView];
+    [UIView animateWithDuration:0.6 animations:^{
+        checkinView.alpha = 1;
+    }];
     
 }
 
