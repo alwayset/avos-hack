@@ -46,7 +46,7 @@ static HackDataManager *singletonInstance;
 {
     
     AVQuery* query = [AVQuery queryWithClassName:@"_User"];
-    [query whereKey:@"currentPlace" equalTo:[AVUser currentUser][@"currentPlace"]];
+//    [query whereKey:@"currentPlace" equalTo:[AVUser currentUser][@"currentPlace"]];
     [query includeKey:@"profilePicture"];
     [query includeKey:@"currentPlace"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -126,7 +126,22 @@ static HackDataManager *singletonInstance;
         }
     }];
 }
-
+- (void)loadMyStatusArr
+{
+    AVStatusQuery *query=[AVStatus statusQuery];
+    
+    [query whereKey:@"source" equalTo:[AVUser currentUser]];
+    [query includeKey:@"source"];
+    [query includeKey:@"place"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            
+        } else {
+            self.myStatus = [NSMutableArray arrayWithArray:objects];
+            [[NSNotificationCenter defaultCenter] postNotificationName:MyStatusArrLoaded object:nil];
+        }
+    }];
+}
 + (NSString*)getTimeStr:(NSDate*) time {
     NSTimeInterval interval = -[time timeIntervalSinceNow];
     int minutes = interval/60;

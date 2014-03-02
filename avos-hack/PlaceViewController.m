@@ -36,12 +36,18 @@
 }
 
 - (void)setContent {
+    self.placePicture.layer.masksToBounds = YES;
+    self.placePicture.layer.cornerRadius = 6;
     AVFile *pic = self.parentPlace[@"picture"];
     [pic getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
             self.placePicture.image = [UIImage imageWithData:data];
         }
     }];
+    self.placeNameLabel.text = self.parentPlace[@"placeName"];
+}
+- (IBAction)back:(id)sender {
+        [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,16 +67,26 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ProductCell *cell = [self.tableview dequeueReusableCellWithIdentifier:@"ProductCell" forIndexPath:indexPath];
     AVObject *aProduct = [_products objectAtIndex:indexPath.row];
-    cell.productName = aProduct[@"productName"];
+    cell.productName.text = aProduct[@"productName"];
     AVFile *file = aProduct[@"image"];
+    [file getThumbnail:YES width:100 height:100 withBlock:^(UIImage *image, NSError *error) {
+        cell.productPicture.image = image;
+    }];
+    /*
     [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
             cell.productPicture.image = [UIImage imageWithData:data];
         }
     }];
+     */
+    [cell setCornerRadius];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
-- (IBAction)showNearUsers:(id)sender {
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 74.0;
 }
 
 - (void)loadProducts {

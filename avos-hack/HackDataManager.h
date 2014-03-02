@@ -13,6 +13,7 @@
 @property (nonatomic,retain) NSMutableArray* nearUsers;
 @property CBPeripheralManager *peripheralManager;
 @property (nonatomic,retain) NSMutableArray* status;
+@property (nonatomic,retain) NSMutableArray* myStatus;
 
 - (void)loadNearUsersArr;
 + (HackDataManager *)sharedInstance;
@@ -26,6 +27,7 @@
 - (void)advertiseUserAtPlace:(AVObject *)place;
 - (void)stopAdvertise;
 - (void)loadStatusArr;
+- (void)loadMyStatusArr;
 + (NSString*)getTimeStr:(NSDate*) time ;
 - (void)addToPlace:(AVObject *)place;
 @end

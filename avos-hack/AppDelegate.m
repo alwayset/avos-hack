@@ -24,6 +24,7 @@
 //    [self.window makeKeyAndVisible];
     [[NSNotificationCenter defaultCenter] addObserver:[HackDataManager sharedInstance] selector:@selector(loadNearUsersArr) name:NeedNearUsersArrNotif object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:[HackDataManager sharedInstance] selector:@selector(loadStatusArr) name:NeedStatusArrNotif object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:[HackDataManager sharedInstance] selector:@selector(loadMyStatusArr) name:NeedMyStatusArrNotif object:nil];
     return YES;
 }
 

@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface UserProfileViewController : UIViewController
+#import "InfoSettingCell.h"
+@interface UserProfileViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@property (strong, nonatomic) IBOutlet UILabel *displayNameLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *profilePicture;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) InfoSettingCell* phoneCell;
+@property (strong, nonatomic) InfoSettingCell* addressCell;
+@property (strong, nonatomic) InfoSettingCell* companyCell;
+@property (strong, nonatomic) InfoSettingCell* emailCell;
+@property (strong, nonatomic) InfoSettingCell* wechatCell;
 
 @end
