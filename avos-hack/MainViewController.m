@@ -11,6 +11,7 @@
 #import "constant.h"
 #import "HackDataManager.h"
 #import "MBProgressHUD.h"
+#import "PlaceViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 
@@ -76,8 +77,11 @@
     // This location manager will be used to demonstrate how to range beacons.
     _locationManager = [[CLLocationManager alloc] init];
     _locationManager.delegate = self;
+    [self.currentPlaceView.layer setMasksToBounds:YES];
+    [self.currentPlaceView.layer setCornerRadius:8];
     
 }
+
 
 
 
@@ -283,7 +287,7 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 - (IBAction)kmpClicked:(id)sender {
-    [[NSNotificationCenter defaultCenter] postNotificationName:NeedNearUsersArrNotif object:nil];
+    if ([AVUser currentUser][@"currentPlace"]) [[NSNotificationCenter defaultCenter] postNotificationName:NeedNearUsersArrNotif object:nil];
     UIViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"NearUsersViewController"];
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -537,8 +541,11 @@
     self.placeNameLabel.hidden = NO;
     self.placePicture.image = nil;
     self.placePicture.hidden = NO;
+    
+    self.placeButton.hidden = NO;
     self.placeNameLabel.text = place[@"placeName"];
     AVFile *placePicture = place[@"picture"];
+    
     [placePicture getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
             self.placePicture.image = [UIImage imageWithData:data];
@@ -551,5 +558,11 @@
     self.imhereLabel.hidden = YES;
     self.placeNameLabel.hidden = YES;
     self.placePicture.hidden = YES;
+    self.placeButton.hidden = YES;
+}
+- (IBAction)placeButtonClicked:(id)sender {
+    PlaceViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"PlaceViewController"];
+    vc.parentPlace = [AVUser currentUser][@"currentPlace"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 @end

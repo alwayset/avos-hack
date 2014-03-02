@@ -44,8 +44,11 @@ static HackDataManager *singletonInstance;
 }
 - (void)loadNearUsersArr
 {
+    
     AVQuery* query = [AVQuery queryWithClassName:@"_User"];
+    [query whereKey:@"currentPlace" equalTo:[AVUser currentUser][@"currentPlace"]];
     [query includeKey:@"profilePicture"];
+    [query includeKey:@"currentPlace"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             self.nearUsers = [NSMutableArray arrayWithArray:objects];
