@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2B36850818C28DC000EC1FA5 /* PlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B36850718C28DC000EC1FA5 /* PlaceViewController.m */; };
 		2B36850B18C29C4100EC1FA5 /* ProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B36850A18C29C4100EC1FA5 /* ProductCell.m */; };
+		2B36851618C2E55700EC1FA5 /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B36851518C2E55700EC1FA5 /* AVOSCloud.framework */; };
 		2B60C35518C189D200691913 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B60C35418C189D200691913 /* Foundation.framework */; };
 		2B60C35718C189D200691913 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B60C35618C189D200691913 /* CoreGraphics.framework */; };
 		2B60C35918C189D200691913 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B60C35818C189D200691913 /* UIKit.framework */; };
@@ -69,6 +70,7 @@
 		2B36850718C28DC000EC1FA5 /* PlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceViewController.m; sourceTree = "<group>"; };
 		2B36850918C29C4100EC1FA5 /* ProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCell.h; sourceTree = "<group>"; };
 		2B36850A18C29C4100EC1FA5 /* ProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCell.m; sourceTree = "<group>"; };
+		2B36851518C2E55700EC1FA5 /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloud.framework; sourceTree = "<group>"; };
 		2B60C35118C189D200691913 /* avos-hack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "avos-hack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B60C35418C189D200691913 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2B60C35618C189D200691913 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -149,6 +151,7 @@
 				2B60C35918C189D200691913 /* UIKit.framework in Frameworks */,
 				84DFD3EA18C2BBA900D6FDC6 /* AVOSCloud.framework in Frameworks */,
 				2B60C35518C189D200691913 /* Foundation.framework in Frameworks */,
+				2B36851618C2E55700EC1FA5 /* AVOSCloud.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +194,7 @@
 		2B60C35318C189D200691913 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2B36851518C2E55700EC1FA5 /* AVOSCloud.framework */,
 				84DFD3E918C2BBA900D6FDC6 /* AVOSCloud.framework */,
 				2B60C38918C194EA00691913 /* CoreTelephony.framework */,
 				2B60C38718C194DD00691913 /* MobileCoreServices.framework */,
@@ -582,6 +586,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/admin/avos-hack",
+					"/Users/tao/avos-hack",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "avos-hack/avos-hack-Prefix.pch";
@@ -603,6 +608,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/admin/avos-hack",
+					"/Users/tao/avos-hack",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "avos-hack/avos-hack-Prefix.pch";
