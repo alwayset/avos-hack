@@ -287,7 +287,7 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 - (IBAction)kmpClicked:(id)sender {
-//    if ([AVUser currentUser][@"currentPlace"])
+    if ([AVUser currentUser][@"currentPlace"])
         [[NSNotificationCenter defaultCenter] postNotificationName:NeedNearUsersArrNotif object:nil];
     UIViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"NearUsersViewController"];
     [self.navigationController pushViewController:vc animated:YES];

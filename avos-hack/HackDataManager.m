@@ -46,7 +46,7 @@ static HackDataManager *singletonInstance;
 {
     
     AVQuery* query = [AVQuery queryWithClassName:@"_User"];
-//    [query whereKey:@"currentPlace" equalTo:[AVUser currentUser][@"currentPlace"]];
+    [query whereKey:@"currentPlace" equalTo:[AVUser currentUser][@"currentPlace"]];
     [query includeKey:@"profilePicture"];
     [query includeKey:@"currentPlace"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
