@@ -49,6 +49,9 @@
 		8483943718C1F2A700672C8A /* leftArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8483943618C1F2A700672C8A /* leftArrow@2x.png */; };
 		8483943A18C1FB9900672C8A /* CardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483943918C1FB9900672C8A /* CardCell.m */; };
 		8483943D18C2131F00672C8A /* WallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483943C18C2131F00672C8A /* WallViewController.m */; };
+		84BDFB9D18C2EB1800E384D5 /* InfoSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BDFB9C18C2EB1800E384D5 /* InfoSettingCell.m */; };
+		84BDFBA318C3045A00E384D5 /* DRNRealTimeBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BDFBA018C3045A00E384D5 /* DRNRealTimeBlurView.m */; };
+		84BDFBA418C3045A00E384D5 /* UIImage+BoxBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BDFBA218C3045A00E384D5 /* UIImage+BoxBlur.m */; };
 		84DFD3EA18C2BBA900D6FDC6 /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84DFD3E918C2BBA900D6FDC6 /* AVOSCloud.framework */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +130,12 @@
 		8483943918C1FB9900672C8A /* CardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardCell.m; sourceTree = "<group>"; };
 		8483943B18C2131F00672C8A /* WallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WallViewController.h; sourceTree = "<group>"; };
 		8483943C18C2131F00672C8A /* WallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WallViewController.m; sourceTree = "<group>"; };
+		84BDFB9B18C2EB1800E384D5 /* InfoSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoSettingCell.h; sourceTree = "<group>"; };
+		84BDFB9C18C2EB1800E384D5 /* InfoSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoSettingCell.m; sourceTree = "<group>"; };
+		84BDFB9F18C3045A00E384D5 /* DRNRealTimeBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRNRealTimeBlurView.h; sourceTree = "<group>"; };
+		84BDFBA018C3045A00E384D5 /* DRNRealTimeBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRNRealTimeBlurView.m; sourceTree = "<group>"; };
+		84BDFBA118C3045A00E384D5 /* UIImage+BoxBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BoxBlur.h"; sourceTree = "<group>"; };
+		84BDFBA218C3045A00E384D5 /* UIImage+BoxBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BoxBlur.m"; sourceTree = "<group>"; };
 		84DFD3E918C2BBA900D6FDC6 /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloud.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -231,6 +240,9 @@
 				8483943918C1FB9900672C8A /* CardCell.m */,
 				8467F91318C2315D00CA210E /* StatuCell.h */,
 				8467F91418C2315D00CA210E /* StatuCell.m */,
+				84BDFB9B18C2EB1800E384D5 /* InfoSettingCell.h */,
+				84BDFB9C18C2EB1800E384D5 /* InfoSettingCell.m */,
+				84BDFB9E18C3045A00E384D5 /* Blur */,
 				8483941E18C1C66900672C8A /* images */,
 				8467F90D18C22CF500CA210E /* AMBlurView */,
 				8483941D18C1B2BF00672C8A /* MBProgressHUD */,
@@ -308,6 +320,17 @@
 				8483942118C1CD4300672C8A /* background.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		84BDFB9E18C3045A00E384D5 /* Blur */ = {
+			isa = PBXGroup;
+			children = (
+				84BDFB9F18C3045A00E384D5 /* DRNRealTimeBlurView.h */,
+				84BDFBA018C3045A00E384D5 /* DRNRealTimeBlurView.m */,
+				84BDFBA118C3045A00E384D5 /* UIImage+BoxBlur.h */,
+				84BDFBA218C3045A00E384D5 /* UIImage+BoxBlur.m */,
+			);
+			path = Blur;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,10 +454,13 @@
 				8483943D18C2131F00672C8A /* WallViewController.m in Sources */,
 				8467F91518C2315D00CA210E /* StatuCell.m in Sources */,
 				8483943A18C1FB9900672C8A /* CardCell.m in Sources */,
+				84BDFB9D18C2EB1800E384D5 /* InfoSettingCell.m in Sources */,
 				84084B3418C260EC00D421FF /* PlaceProfileViewController.m in Sources */,
 				2B60C3E718C20AFA00691913 /* MyNavigationController.m in Sources */,
+				84BDFBA318C3045A00E384D5 /* DRNRealTimeBlurView.m in Sources */,
 				2B60C36118C189D200691913 /* main.m in Sources */,
 				2B36850B18C29C4100EC1FA5 /* ProductCell.m in Sources */,
+				84BDFBA418C3045A00E384D5 /* UIImage+BoxBlur.m in Sources */,
 				8483942718C1CE3600672C8A /* CircleButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

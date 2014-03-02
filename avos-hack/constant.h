@@ -19,4 +19,7 @@
 
 #define NeedStatusArrNotif @"need_status_array_notification"
 #define StatusArrLoaded @"status_array_loaded"
+
+#define NeedMyStatusArrNotif @"need_mystatus_array_notification"
+#define MyStatusArrLoaded @"mystatus_array_loaded"
 #endif

@@ -11,5 +11,6 @@
 @interface ProductCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *productPicture;
 @property (weak, nonatomic) IBOutlet UILabel *productName;
-
+@property (strong, nonatomic) IBOutlet UIView *backView;
+- (void)setCornerRadius;
 @end

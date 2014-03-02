@@ -287,7 +287,8 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 - (IBAction)kmpClicked:(id)sender {
-    if ([AVUser currentUser][@"currentPlace"]) [[NSNotificationCenter defaultCenter] postNotificationName:NeedNearUsersArrNotif object:nil];
+    if ([AVUser currentUser][@"currentPlace"])
+        [[NSNotificationCenter defaultCenter] postNotificationName:NeedNearUsersArrNotif object:nil];
     UIViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"NearUsersViewController"];
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -563,6 +564,12 @@
 - (IBAction)placeButtonClicked:(id)sender {
     PlaceViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"PlaceViewController"];
     vc.parentPlace = [AVUser currentUser][@"currentPlace"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+- (IBAction)profilePicClicked:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:NeedMyStatusArrNotif object:nil];
+    UIViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"UserProfileViewController"];
+    //vc.parentPlace = [AVUser currentUser][@"currentPlace"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 @end
