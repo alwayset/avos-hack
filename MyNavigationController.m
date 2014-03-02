@@ -12,7 +12,7 @@
 #import "CheckInPopView.h"
 @interface MyNavigationController ()
 @property (nonatomic,retain) NSMutableArray* gotBeacons;
-
+@property (nonatomic, retain) NSNumber *majorValueInUse;
 
 @property CheckInPopView *checkinView;
 
@@ -42,7 +42,7 @@
     [super viewDidLoad];
 
     
-    
+    self.majorValueInUse = nil;
     _uuid = [[NSUUID alloc] initWithUUIDString:@"E2C56DB5-DFFB-48D2-B060-D0F5A71096E0"];
 	// Do any additional setup after loading the view.
     _locationManager = [[CLLocationManager alloc] init];
@@ -63,6 +63,14 @@
     // Beacons will be categorized and displayed by proximity.
     _beacons = [NSMutableArray arrayWithArray:beacons];
     
+    
+    if (_beacons.count < 1) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"ShouldHideCurrentPlace" object:nil];
+        return;
+    }
+    
+    
+    
         NSArray *near_arr = [beacons filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"proximity = %d", CLProximityNear]];
     NSArray *far_arr = [beacons filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"proximity = %d", CLProximityFar]];
     
@@ -75,9 +83,9 @@
     if (_beacons.count > 0) {
         //[HackDataManager showMessageWithText:@"成功啦！"];
         CLBeacon* beacon = [_beacons objectAtIndex:0];
-        if (!gotBeacons || ![gotBeacons containsObject:beacon.major]) {
-            if (!gotBeacons) gotBeacons = [[NSMutableArray alloc] init];
-            [gotBeacons addObject:beacon.major];
+        if (![self.majorValueInUse isEqual:beacon.major]) {
+//            [gotBeacons addObject:beacon.major];
+            self.majorValueInUse = beacon.major;
             AVQuery* query = [AVQuery queryWithClassName:@"Place"];
             [query whereKey:@"majorValue" equalTo:beacon.major];
             [query includeKey:@"ad"];
@@ -89,17 +97,21 @@
                     [currentUser setObject:object forKey:@"currentPlace"];
                     [currentUser saveInBackground];
                     [[NSNotificationCenter defaultCenter] postNotificationName:@"ShouldShowCurrentPlace" object:object];
-                    _place = object;
-                    [self popAd];
-                    [[HackDataManager sharedInstance] checkInPlace:object];
+                    if (![_place.objectId isEqualToString:object.objectId]) {
+                        _place = object;
+                        [[HackDataManager sharedInstance] checkInPlace:object];
+                        [self popAd];
+                    }
+
 //                    [[HackDataManager sharedInstance] advertiseUserAtPlace:_place];
                     
                 }
             }];
+        } else {
+            self.majorValueInUse = nil;
         }
     } else {
         [[AVUser currentUser] setObject:[NSNull null] forKey:@"currentPlace"];
-        _place = nil;
         [[NSNotificationCenter defaultCenter] postNotificationName:@"ShouldHideCurrentPlace" object:nil];
     }
 }
