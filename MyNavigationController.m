@@ -40,6 +40,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    
+    
     _uuid = [[NSUUID alloc] initWithUUIDString:@"E2C56DB5-DFFB-48D2-B060-D0F5A71096E0"];
 	// Do any additional setup after loading the view.
     _locationManager = [[CLLocationManager alloc] init];
@@ -82,13 +85,22 @@
                 if (error) {
                     
                 } else {
+                    AVUser *currentUser = [AVUser currentUser];
+                    [currentUser setObject:object forKey:@"currentPlace"];
+                    [currentUser saveInBackground];
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"ShouldShowCurrentPlace" object:object];
                     _place = object;
                     [self popAd];
                     [[HackDataManager sharedInstance] checkInPlace:object];
-                    [[HackDataManager sharedInstance] advertiseUserAtPlace:_place];
+//                    [[HackDataManager sharedInstance] advertiseUserAtPlace:_place];
+                    
                 }
             }];
         }
+    } else {
+        [[AVUser currentUser] setObject:[NSNull null] forKey:@"currentPlace"];
+        _place = nil;
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"ShouldHideCurrentPlace" object:nil];
     }
 }
 

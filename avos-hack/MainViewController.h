@@ -22,5 +22,9 @@
 @property (strong, nonatomic) IBOutlet CircleButton *kmpButton;
 @property (strong, nonatomic) IBOutlet UIView *infoView;
 @property (strong, nonatomic) IBOutlet UIView *buttonView;
+@property (weak, nonatomic) IBOutlet UIView *currentPlaceView;
+@property (weak, nonatomic) IBOutlet UILabel *imhereLabel;
+@property (weak, nonatomic) IBOutlet UILabel *placeNameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *placePicture;
 
 @end

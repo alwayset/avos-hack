@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <AVOSCloud/AVOSCloud.h>
 #import <CoreBluetooth/CoreBluetooth.h>
-@interface HackDataManager : NSObject
+@interface HackDataManager : NSObject<CBPeripheralManagerDelegate>
 @property (nonatomic,retain) NSMutableArray* nearUsers;
 @property CBPeripheralManager *peripheralManager;
 @property (nonatomic,retain) NSMutableArray* status;
@@ -27,4 +27,5 @@
 - (void)stopAdvertise;
 - (void)loadStatusArr;
 + (NSString*)getTimeStr:(NSDate*) time ;
+- (void)addToPlace:(AVObject *)place;
 @end
