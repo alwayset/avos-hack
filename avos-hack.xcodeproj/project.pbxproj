@@ -26,17 +26,13 @@
 		2B60C38A18C194EA00691913 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B60C38918C194EA00691913 /* CoreTelephony.framework */; };
 		2B60C3D018C1989700691913 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B60C3CF18C1989700691913 /* Storyboard.storyboard */; };
 		2B60C3E718C20AFA00691913 /* MyNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B60C3E618C20AFA00691913 /* MyNavigationController.m */; };
-
+		2BD97AF918C2315D00B56924 /* CheckInPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD97AF818C2315D00B56924 /* CheckInPopView.m */; };
 		84084B3118C260B900D421FF /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84084B3018C260B900D421FF /* UserProfileViewController.m */; };
 		84084B3418C260EC00D421FF /* PlaceProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84084B3318C260EC00D421FF /* PlaceProfileViewController.m */; };
-
-		2BD97AF918C2315D00B56924 /* CheckInPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD97AF818C2315D00B56924 /* CheckInPopView.m */; };
-
 		8467F91018C22CF500CA210E /* AMBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8467F90F18C22CF500CA210E /* AMBlurView.m */; };
 		8467F91218C2308E00CA210E /* point.png in Resources */ = {isa = PBXBuildFile; fileRef = 8467F91118C2308E00CA210E /* point.png */; };
 		8467F91518C2315D00CA210E /* StatuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8467F91418C2315D00CA210E /* StatuCell.m */; };
 		8483940E18C1993A00672C8A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483940D18C1993900672C8A /* MainViewController.m */; };
-		8483941118C1A1EC00672C8A /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8483941018C1A1EC00672C8A /* AVOSCloud.framework */; };
 		8483941518C1A42200672C8A /* HackDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483941418C1A42200672C8A /* HackDataManager.m */; };
 		8483941818C1A85B00672C8A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483941718C1A85B00672C8A /* MBProgressHUD.m */; };
 		8483941C18C1AF6900672C8A /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483941B18C1AF6900672C8A /* VPImageCropperViewController.m */; };
@@ -52,6 +48,7 @@
 		8483943718C1F2A700672C8A /* leftArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8483943618C1F2A700672C8A /* leftArrow@2x.png */; };
 		8483943A18C1FB9900672C8A /* CardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483943918C1FB9900672C8A /* CardCell.m */; };
 		8483943D18C2131F00672C8A /* WallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8483943C18C2131F00672C8A /* WallViewController.m */; };
+		84DFD3EA18C2BBA900D6FDC6 /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84DFD3E918C2BBA900D6FDC6 /* AVOSCloud.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,15 +88,12 @@
 		2B60C3CF18C1989700691913 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		2B60C3E518C20AFA00691913 /* MyNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavigationController.h; sourceTree = "<group>"; };
 		2B60C3E618C20AFA00691913 /* MyNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavigationController.m; sourceTree = "<group>"; };
-<<<<<<< HEAD
+		2BD97AF718C2315D00B56924 /* CheckInPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckInPopView.h; path = "avos-hack/CheckInPopView.h"; sourceTree = "<group>"; };
+		2BD97AF818C2315D00B56924 /* CheckInPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckInPopView.m; path = "avos-hack/CheckInPopView.m"; sourceTree = "<group>"; };
 		84084B2F18C260B900D421FF /* UserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileViewController.h; sourceTree = "<group>"; };
 		84084B3018C260B900D421FF /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileViewController.m; sourceTree = "<group>"; };
 		84084B3218C260EC00D421FF /* PlaceProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceProfileViewController.h; sourceTree = "<group>"; };
 		84084B3318C260EC00D421FF /* PlaceProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceProfileViewController.m; sourceTree = "<group>"; };
-=======
-		2BD97AF718C2315D00B56924 /* CheckInPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckInPopView.h; path = "avos-hack/CheckInPopView.h"; sourceTree = "<group>"; };
-		2BD97AF818C2315D00B56924 /* CheckInPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckInPopView.m; path = "avos-hack/CheckInPopView.m"; sourceTree = "<group>"; };
->>>>>>> origin/newnew
 		8467F90E18C22CF500CA210E /* AMBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMBlurView.h; sourceTree = "<group>"; };
 		8467F90F18C22CF500CA210E /* AMBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMBlurView.m; sourceTree = "<group>"; };
 		8467F91118C2308E00CA210E /* point.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = point.png; path = images/point.png; sourceTree = "<group>"; };
@@ -107,7 +101,6 @@
 		8467F91418C2315D00CA210E /* StatuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatuCell.m; sourceTree = "<group>"; };
 		8483940C18C1993900672C8A /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		8483940D18C1993900672C8A /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		8483941018C1A1EC00672C8A /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloud.framework; sourceTree = "<group>"; };
 		8483941218C1A3B300672C8A /* constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constant.h; sourceTree = "<group>"; };
 		8483941318C1A42200672C8A /* HackDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackDataManager.h; sourceTree = "<group>"; };
 		8483941418C1A42200672C8A /* HackDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HackDataManager.m; sourceTree = "<group>"; };
@@ -132,6 +125,7 @@
 		8483943918C1FB9900672C8A /* CardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardCell.m; sourceTree = "<group>"; };
 		8483943B18C2131F00672C8A /* WallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WallViewController.h; sourceTree = "<group>"; };
 		8483943C18C2131F00672C8A /* WallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WallViewController.m; sourceTree = "<group>"; };
+		84DFD3E918C2BBA900D6FDC6 /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloud.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,8 +138,8 @@
 				2B60C38618C194D400691913 /* SystemConfiguration.framework in Frameworks */,
 				2B60C35718C189D200691913 /* CoreGraphics.framework in Frameworks */,
 				2B60C35918C189D200691913 /* UIKit.framework in Frameworks */,
+				84DFD3EA18C2BBA900D6FDC6 /* AVOSCloud.framework in Frameworks */,
 				2B60C35518C189D200691913 /* Foundation.framework in Frameworks */,
-				8483941118C1A1EC00672C8A /* AVOSCloud.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,7 +182,7 @@
 		2B60C35318C189D200691913 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8483941018C1A1EC00672C8A /* AVOSCloud.framework */,
+				84DFD3E918C2BBA900D6FDC6 /* AVOSCloud.framework */,
 				2B60C38918C194EA00691913 /* CoreTelephony.framework */,
 				2B60C38718C194DD00691913 /* MobileCoreServices.framework */,
 				2B60C38518C194D400691913 /* SystemConfiguration.framework */,
@@ -554,13 +548,13 @@
 		2B60C37E18C189D200691913 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/tao/avos-hack",
 					"/Users/admin/avos-hack",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -575,13 +569,13 @@
 		2B60C37F18C189D200691913 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/tao/avos-hack",
 					"/Users/admin/avos-hack",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
